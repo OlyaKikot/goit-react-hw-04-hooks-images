@@ -49,7 +49,7 @@ export default function App() {
   useEffect(() => {
     if (searchQuery === "") return;
     getImages();
-  }, [searchQuery, page]);
+  }, [searchQuery, page]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (page > 1) {
@@ -58,7 +58,7 @@ export default function App() {
         behavior: "smooth",
       });
     }
-  }, [images]);
+  }, [images]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleKeyDown = (e) => {
     if (e.code === "Escape") {
@@ -74,13 +74,13 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     return () => {
       window.addEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onLoadMore = () => {
     setPage((oldPage) => oldPage + 1);
