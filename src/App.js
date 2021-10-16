@@ -58,7 +58,7 @@ export default function App() {
         behavior: "smooth",
       });
     }
-  });
+  }, [images]);
 
   const handleKeyDown = (e) => {
     if (e.code === "Escape") {

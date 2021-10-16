@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 const modalRoot = document.querySelector("#modal-root");
 
 export default function Modal({ src, onCloseModal, handleOverlay }) {
-  return (
-    createPortal(
+  return createPortal(
+    <>
       <div className={s.Overlay} onClick={handleOverlay}>
         <div className={s.Modal}>
           <img src={src} alt="" width="1200px" height="800px" />
@@ -20,7 +20,7 @@ export default function Modal({ src, onCloseModal, handleOverlay }) {
           </button>
         </div>
       </div>
-    ),
+    </>,
     modalRoot
   );
 }
