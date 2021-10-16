@@ -75,8 +75,11 @@ export default function App() {
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
   }, []);
+
   useEffect(() => {
-    return window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.addEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const onLoadMore = () => {
